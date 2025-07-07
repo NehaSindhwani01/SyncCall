@@ -1,13 +1,43 @@
-.landingPageContainer{
-  width: 100vw;
-  height: 100vh;
-  background: url("/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.landingPageContainer nav{
+html {
+  scroll-behavior: smooth;
+}
+
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: url("/background.png") no-repeat center center/cover;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.landingPageContainer::before {
+  content: '';
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.landingPageContainer > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Nav */
+.landingPageContainer nav {
   padding-inline: 1.2rem;
   padding-block: 1.6rem;
   display: flex;
@@ -15,53 +45,149 @@
   align-items: center;
 }
 
-.landingPageContainer nav h2{
+.landingPageContainer nav h2 {
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.landingPageContainer nav .navList{
+.landingPageContainer nav .navList {
   display: flex;
   gap: 1.6rem;
   cursor: pointer;
 }
 
-.landingPageContainer nav .navList .navLink{
+.landingPageContainer nav .navList .navLink {
   text-decoration: none;
   color: white;
-  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.landingMainContainer{
+.landingPageContainer nav .navList .navLink:hover {
+  color: #ff9839;
+}
+
+/* Main container */
+.landingMainContainer {
   display: flex;
   justify-content: space-between;
   padding-inline: 3rem;
   height: 80vh;
   align-items: center;
+  position: relative;
 }
 
-.landingMainContainer > div:nth-child(1){
+/* Left side */
+.landingMainContainer > div:nth-child(1) {
   font-size: 2.2rem;
+  max-width: 50%;
+  animation: slideFadeIn 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-.landingMainContainer > div:nth-child(1) div[role='button']{
+.landingMainContainer > div:nth-child(1) div[role='button'] {
   background: #FF9839;
   width: fit-content;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   margin-top: 1.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.landingMainContainer > div:nth-child(1) div[role='button']:hover {
+  background: #ff7700;
+  transform: scale(1.05);
+}
 
-.landingMainContainer > div:nth-child(1) div[role='button'] a{
+.landingMainContainer > div:nth-child(1) div[role='button'] a {
   color: white;
   text-decoration: none;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 
-.landingMainContainer > div:nth-child(2) img{
+/* Right side image */
+.landingMainContainer > div:nth-child(2) img {
   height: 70vh;
   width: auto;
+  animation: fadeIn 1.5s ease-in;
 }
 
+/* Animations */
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Media Queries */
+@media screen and (max-width: 1024px) {
+  .landingMainContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding-inline: 2rem;
+    height: auto;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.8rem;
+    max-width: 100%;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] a {
+    font-size: 1.4rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 45vh;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .landingPageContainer nav {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .landingPageContainer nav h2 {
+    font-size: 1.6rem;
+  }
+
+  .landingPageContainer nav .navList {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) {
+    font-size: 1.4rem;
+  }
+
+  .landingMainContainer > div:nth-child(1) div[role='button'] {
+    padding: 0.7rem 1.2rem;
+  }
+
+  .landingMainContainer > div:nth-child(2) img {
+    height: 30vh;
+  }
+}

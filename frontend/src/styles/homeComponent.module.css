@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.homeWrapper {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.navBar {
+  display: none; /* Navigation handled in rightPanel */
+}
+
+.mainContent {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+
+.leftPanel {
+  flex: 1;
+  background-color: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 4rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+.headline {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.joinSection {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.joinSection input {
+  background-color: white;
+  border-radius: 4px;
+}
+
+.joinBtn {
+  padding: 0 2rem !important;
+  background-color: #FF9839 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+
+.joinBtn:hover {
+  background-color: #fb923c !important;
+}
+
+.rightPanel {
+  flex: 1;
+  background-color: #f1f5f9;
+  background-image: url('/logo3.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+
+.navActions {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navText {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.logoutButton {
+  background-color: #ef4444 !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  text-transform: none !important;
+}
+
+.logoutButton:hover {
+  background-color: #dc2626 !important;
+}

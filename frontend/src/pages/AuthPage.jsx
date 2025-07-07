@@ -1,12 +1,26 @@
 import { useState, useContext } from 'react';
 import {
-  Avatar, Button, CssBaseline, TextField, Paper, Box, Grid, Snackbar
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  Paper,
+  Box,
+  Grid,
+  Snackbar,
 } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { AuthContext } from '../contexts/AuthContext';
+import '@fontsource/poppins';
+import { useLocation } from 'react-router-dom';
 
-const theme = createTheme();
+
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Poppins, sans-serif',
+  },
+});
 
 export default function AuthPage() {
   const [username, setUsername] = useState('');
@@ -14,7 +28,8 @@ export default function AuthPage() {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
-  const [formState, setFormState] = useState(0);
+  const location = useLocation();
+  const [formState, setFormState] = useState(location.state?.mode === "signup" ? 1 : 0);
   const [open, setOpen] = useState(false);
 
   const { handleRegister, handleLogin } = useContext(AuthContext);
@@ -34,7 +49,6 @@ export default function AuthPage() {
         setFormState(0);
       }
     } catch (err) {
-      console.log("Login error caught:", err);
       const msg = err.response?.data?.message || 'Something went wrong';
       setError(msg);
     }
@@ -49,11 +63,10 @@ export default function AuthPage() {
           sx={{
             flex: 15,
             display: { xs: 'none', md: 'block' },
-            background: 'url("https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmlkZW8lMjBjYWxsfGVufDB8fDB8fHww")',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+            background:
+              'url("https://images.unsplash.com/photo-1612831455359-970e23a1e4e9?w=600&auto=format&fit=crop&q=60") no-repeat center center/cover',
             width: '100%',
-            backgroundPosition: 'center',
+            height: '100%',
           }}
         />
 
@@ -65,28 +78,56 @@ export default function AuthPage() {
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            px: 4,
+            px: { xs: 3, sm: 4 },
+            py: { xs: 5, sm: 8 },
             backgroundColor: 'white',
+            borderRadius: { xs: 0, sm: 3 },
+            boxShadow: { xs: 'none', sm: '0 6px 20px rgba(0, 0, 0, 0.1)' },
+            transition: 'all 0.3s ease',
           }}
           component={Paper}
           elevation={6}
           square
         >
           <Box sx={{ width: '100%', maxWidth: 400 }}>
-            <Avatar sx={{ m: 'auto', bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
+            <Avatar sx={{ m: 'auto', bgcolor: '#ff9839', width: 56, height: 56 }}>
+              <LockOutlinedIcon fontSize="large" />
             </Avatar>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2, mb: 2, gap: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                mt: 3,
+                mb: 3,
+                gap: 2,
+              }}
+            >
               <Button
                 variant={formState === 0 ? 'contained' : 'outlined'}
                 onClick={() => setFormState(0)}
+                sx={{
+                  px: 4,
+                  fontWeight: 600,
+                  bgcolor: formState === 0 ? '#4338ca' : undefined,
+                  '&:hover': {
+                    bgcolor: '#3730a3',
+                  },
+                }}
               >
                 SIGN IN
               </Button>
               <Button
                 variant={formState === 1 ? 'contained' : 'outlined'}
                 onClick={() => setFormState(1)}
+                sx={{
+                  px: 4,
+                  fontWeight: 600,
+                  bgcolor: formState === 1 ? '#ff9839' : undefined,
+                  '&:hover': {
+                    bgcolor: '#fb923c',
+                  },
+                }}
               >
                 SIGN UP
               </Button>
@@ -102,8 +143,8 @@ export default function AuthPage() {
                   label="Full Name"
                   name="name"
                   value={name}
-                  autoFocus
                   onChange={(e) => setName(e.target.value)}
+                  autoFocus={formState === 1}
                 />
               )}
 
@@ -130,21 +171,41 @@ export default function AuthPage() {
                 id="password"
               />
 
-              {error && <p style={{ color: 'red' }}>{error}</p>}
+              {error && (
+                <p
+                  style={{
+                    color: 'red',
+                    marginTop: '10px',
+                    fontWeight: 500,
+                  }}
+                >
+                  {error}
+                </p>
+              )}
 
               <Button
                 type="button"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 4,
+                  mb: 2,
+                  py: 1.5,
+                  fontWeight: 600,
+                  bgcolor: '#0f172a',
+                  '&:hover': {
+                    bgcolor: '#1e293b',
+                  },
+                }}
                 onClick={handleAuth}
               >
-                {formState === 0 ? "Login" : "Register"}
+                {formState === 0 ? 'Login' : 'Register'}
               </Button>
             </Box>
           </Box>
         </Box>
       </Grid>
+
       <Snackbar
         open={open}
         autoHideDuration={4000}
