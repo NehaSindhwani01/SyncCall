@@ -21,6 +21,7 @@ app.set("port" , process.env.PORT || 3000)
 
 const allowedOrigins = [
   'http://localhost:5173',
+  'https://synccall-frontend.onrender.com',
 ];
 
 app.use(cors({
@@ -35,11 +36,11 @@ app.use(cors({
   credentials: true,
 }));
 
-// Explicitly handle preflight OPTIONS requests
 app.options('*', cors({
   origin: allowedOrigins,
   credentials: true
 }));
+
 
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
