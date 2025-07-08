@@ -24,7 +24,9 @@ import saveToHistory from '../utils/history';
 
 
 const server_url = server;
+
 let connections = {};
+
 const peerConfigConnections = {
     iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
 };
