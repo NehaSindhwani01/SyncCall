@@ -116,7 +116,7 @@ SyncCall/
   ![Home Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/home_page.png)
 
 - Enter Lobby  
-  ![Enter Lobby](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/enter_lobby.PNG)
+  ![Enter Lobby](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/enter_lobby_room.PNG)
 
 - Conference View  
   ![Conference View](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/conference_room.PNG)
