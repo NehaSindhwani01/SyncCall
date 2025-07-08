@@ -107,31 +107,31 @@ SyncCall/
 ## 📷 Screenshots
 
 - Landing Page  
-  ![Landing Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/landingpage.png?raw=true)
+  ![Landing Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/landingpage.png)
 
 - Auth Page  
   ![Auth Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/authpage.png)
 
 - Home Page  
-  ![Home Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/home_page.png?raw=true)
+  ![Home Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/home_page.png)
 
 - Enter Lobby  
-  ![Enter Lobby](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/enter_lobby.png?raw=true)
+  ![Enter Lobby](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/enter_lobby.PNG)
 
 - Conference View  
-  ![Conference View](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/conference_room.png?raw=true)
+  ![Conference View](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/conference_room.PNG)
 
 - Joining Room  
-  ![Joining Room](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/others_joining_room.png?raw=true)
+  ![Joining Room](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/others_joining_room.PNG)
 
 - Call Room with Chat  
-  ![Chat Room](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/showing_chat.png?raw=true)
+  ![Chat Room](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/showing_chat.PNG)
 
 - Screen Sharing in Action  
-  ![Screen Sharing](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/share_screen.png?raw=true)
+  ![Screen Sharing](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/share_screen.png)
 
 - Call History Page  
-  ![Meeting History](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/meeting_history.png?raw=true)
+  ![Meeting History](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/meeting_history.png)
 
 ---
 
