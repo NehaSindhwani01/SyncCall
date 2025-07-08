@@ -11,6 +11,7 @@ const client = axios.create({
 });
 
 export const AuthProvider = ({ children }) => {
+    
     const [userData, setUserData] = useState({});
     const router = useNavigate();
 
