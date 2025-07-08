@@ -15,29 +15,27 @@ const io = connectToSocket(server);
 
 app.set("port", process.env.PORT || 3000);
 
-// ✅ Allow local + deployed frontend
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://synccall-frontend.onrender.com',
+  'https://synccall-frontend.onrender.com'
 ];
 
-app.use(cors({
+const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error('Not allowed by CORS'));
+      callback(new Error("Not allowed by CORS"));
     }
   },
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   credentials: true,
-}));
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
 
-// Optional preflight
-app.options('*', cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 
 // Middleware
 app.use(express.json());
