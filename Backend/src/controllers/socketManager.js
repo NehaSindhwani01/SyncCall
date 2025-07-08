@@ -37,7 +37,7 @@ export const connectToSocket = (server) => {
 
             const userInfo = {};
                 connections[path].forEach((id) => {
-                    userInfo[id] = usernames[id]; // ✅ Create a map of socketId → username
+                    userInfo[id] = usernames[id]; 
                 });
 
             for (let a = 0; a < connections[path].length; a++) {
@@ -77,7 +77,7 @@ export const connectToSocket = (server) => {
                 }
 
                 messages[matchingRoom].push({ 'sender': sender, "data": data, "socket-id-sender": socket.id })
-                console.log("message", matchingRoom, ":", sender, data)
+                
 
                 connections[matchingRoom].forEach((elem) => {
                     io.to(elem).emit("chat-message", data, sender, socket.id)

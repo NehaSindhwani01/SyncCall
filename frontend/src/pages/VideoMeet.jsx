@@ -107,7 +107,7 @@ export default function VideoMeet() {
             ]);
 
             const meetingCode = window.location.pathname.split('/').pop();
-            socketRef.current.emit('join-call', window.location.href, username);
+            socketRef.current.emit('join-call', { path: window.location.href, username });
             saveToHistory(meetingCode)
             })
             .catch((err) => {

@@ -1,3 +1,7 @@
+if (typeof process.env.DEBUG === "string" && process.env.DEBUG.trim() === "") {
+  delete process.env.DEBUG;
+}
+
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
@@ -17,7 +21,6 @@ app.set("port" , process.env.PORT || 3000)
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://sync-call-frontend.onrender.com'
 ];
 
 app.use(cors({
