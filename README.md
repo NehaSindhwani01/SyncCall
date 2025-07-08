@@ -110,7 +110,7 @@ SyncCall/
   ![Landing Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/landingpage.png?raw=true)
 
 - Auth Page  
-  ![Auth Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/authpage.png?raw=true)
+  ![Auth Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screeenshots/authpage.png)
 
 - Home Page  
   ![Home Page](https://github.com/NehaSindhwani01/SyncCall/blob/main/frontend/public/screenshots/home_page.png?raw=true)
