@@ -11,7 +11,7 @@ function LandingPage() {
                     <h2>SyncCall</h2>
                 </div>
                 <div className="navList">
-                    <p onClick={() => {window.location.href = "/q23qsc"}}>Join as Guest</p>
+                    <p onClick={() =>  navigate("/q23qsc")}>Join as Guest</p>
                     <p onClick={() => navigate("/auth", { state: { mode: "signup" } })}>Register</p>
                     <p onClick={() => navigate("/auth", { state: { mode: "login" } })}>Login</p>
                 </div>
