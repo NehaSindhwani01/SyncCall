@@ -107,31 +107,31 @@ SyncCall/
 ## 📷 Screenshots
 
 -  Landing Page
-  ![Landing Page](frontend/public/screenshots/landingpage.png)
+  >![Landing Page](frontend/public/screenshots/landingpage.png)
 
 -  Auth Page
-  ![Auth Page](frontend/public/screenshots/authpage.png)
+  >![Auth Page](frontend/public/screenshots/authpage.png)
 
 -  Home Page
-  ![Home Page](frontend/public/screenshots/home_page.png)
+  >![Home Page](frontend/public/screenshots/home_page.png)
 
 -  Enter Lobby
-  ![Enter Lobby](frontend/public/screenshots/enter_lobby.png)
+  >![Enter Lobby](frontend/public/screenshots/enter_lobby.png)
 
 -  Conference View
   ![Conference View](frontend/public/screenshots/conference_room.png)
 
 -  Joining Room
-  ![Joining Room](frontend/public/screenshots/others_joining_room.png)
+  >![Joining Room](frontend/public/screenshots/others_joining_room.png)
 
 -  Call Room with Chat
-  ![Chat Room](frontend/public/screenshots/showing_chat.png)
+  >![Chat Room](frontend/public/screenshots/showing_chat.png)
   
 -  Screen Sharing in Action
-  ![Screen Sharing](frontend/public/screenshots/share_screen.png)
+  >![Screen Sharing](frontend/public/screenshots/share_screen.png)
    
 -  Call History Page
-   ![Meeting History](frontend/public/screenshots/meeting_history.png)
+ >![Meeting History](frontend/public/screenshots/meeting_history.png)
 
 ---
 
@@ -165,6 +165,7 @@ PORT="your_port_num"
 
 MONGODB_URI=your_mongo_connection_string
 
+---
 
 ### 💡 Future Enhancements
 
@@ -173,6 +174,8 @@ MONGODB_URI=your_mongo_connection_string
 📥 File sharing
 
 🌐 Internationalization (i18n)
+
+---
 
 ### 🙋‍♀️ Author
 
